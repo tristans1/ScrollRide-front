@@ -1,0 +1,1389 @@
+html {
+    font-size: 62.5%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    overflow-x: hidden;
+}
+section{
+    overflow: hidden;
+}
+
+
+/*ANIMATION*/
+.loader-wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #78A9CE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    animation: loader 1s infinite ease;
+
+}
+
+.loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    animation: loader-inner 1s infinite ease-in;
+}
+
+@keyframes loader {
+
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loader-inner {
+    0% {
+        height: 0%;
+    }
+
+    25% {
+        height: 0%;
+    }
+
+    50% {
+        height: 100%;
+    }
+
+    75% {
+        height: 100%;
+    }
+
+    100% {
+        height: 0%;
+    }
+}
+
+
+h1 {
+    padding: 0.5% 2%;
+    font-size: 6rem;
+    font-weight: lighter;
+}
+
+h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-top: 0;
+    color: white;
+    padding-top: 5rem;
+    font-weight: normal;
+}
+#profil h2{
+    color: black;
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2.0rem;
+    margin: 5% auto auto 5%;
+
+}
+
+p {
+    line-height: 130%;
+    text-align: left;
+    width: 90%;
+    margin: 1% auto 2rem;
+}
+
+                                                            /*HEADER*/
+
+header {
+    display: flex;
+    padding-top: 10px;
+}
+
+
+
+                                                            /*MENU*/
+
+/*menu-retour*/
+.menu-retour{
+    position: static;
+    visibility: visible;
+
+}
+ .menu-retour > ul {
+    position: absolute;
+    right: 0;
+    margin-left: 0;
+    margin-right: 10px;
+    display: flex;
+}
+.menu-retour > ul li{
+    list-style-type: none;
+    margin-right: 30px;
+}
+ .menu-retour > ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu-retour > ul > li a:hover {
+    color: #78A9CE;
+    text-decoration: underline #78A9CE;
+}
+
+/*menu barre */
+.menu {
+    position: fixed;
+    background: rgba(21,21,21,0.4) ;
+    background-size: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    visibility: hidden;
+    overflow: hidden;
+    transform: translateX(100vw);
+    transition: all .6s ease-in-out;
+
+}
+
+.menu-open body{
+    overflow: hidden
+}
+
+.menu-open .menu {
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+
+.menu .nav-container {
+    position: absolute;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    background: #78A9CE;
+    margin: 0;
+}
+
+.menu .nav-container > * {
+    color: white;
+}
+/*menu nav*/
+.menu ul li {
+    list-style-type: none;
+}
+
+.menu ul > li a,
+.menu ul > li a:visited {
+    font-size: 6.0rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.menu ul > li a:hover {
+    color: #78A9CE;
+    -webkit-text-stroke: 2px white;
+
+}
+
+.menu h4 {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+
+}/*menu lien nav*/
+.menu #nav-ul{
+    flex-basis: 95%;
+    flex-shrink: 1;
+    padding-top: 20%;
+}
+
+.menu #nav-ul li {
+    margin-bottom: 60px;
+}
+
+/*menu reseaux*/
+.menu #nav-reseaux {
+    flex-basis: 5%;
+    flex-shrink: 1;
+    margin-top: 100px;
+}
+.menu #nav-reseaux span {
+
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    content: '';
+    background: white;
+    height: 100px;
+    width: 3px;
+    margin-left: 30px;
+    margin-top: 10px;
+
+}
+
+.menu #nav-reseaux li a i {
+    padding-left: 20px;
+    font-size: 30px;
+}
+
+.menu #nav-reseaux li a:hover {
+    -webkit-text-stroke: 1px white;
+}
+
+/*barres menu*/
+.nav-toggle {
+    width: 60px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+#contest .nav-toggle-bar,
+#contest .nav-toggle-bar::before,
+#contest .nav-toggle-bar::after
+/*#profil .nav-toggle-bar,
+#profil .nav-toggle-bar::before,
+#profil .nav-toggle-bar::after*/{
+    content: '';
+    background: white;
+}
+
+#inscription .nav-toggle-bar,
+#inscription .nav-toggle-bar::before,
+#inscription .nav-toggle-bar::after {
+    content: '';
+    background: white;
+}
+
+
+.nav-toggle-bar,
+.nav-toggle-bar::before,
+.nav-toggle-bar::after {
+    content: '';
+    background: black;
+    height: 3px;
+    position: absolute;
+    right: 0;
+    transition: all .6s ease;
+}
+.nav-toggle-bar{
+    width: 100%;
+}
+
+.nav-toggle-bar::before {
+    top: -10px;
+    width: 80%;
+}
+
+.nav-toggle-bar::after {
+    width: 60%;
+    top: 10px
+}
+
+/*animation croix*/
+.menu-open .nav-toggle-bar {
+    transform: rotate(135deg);
+    background: white;
+    width: 70%; /*taille de la croix global*/
+}
+
+.menu-open .nav-toggle-bar::before,
+.menu-open .nav-toggle-bar::after {
+    background: white;
+    transform: rotate(90deg);
+    top: 0;
+    width: 100%;
+}
+
+
+
+
+                                                        /*HEADER */
+/*header noir*/
+
+#accueil .search-bar {
+    width: 80%;
+    margin-top: 10px;
+    border: solid black 1px;
+    color: #000000;
+    margin-left: 5rem;
+    background: white;
+}
+#accueil #sb-accueil{
+    display: none;
+}
+
+#accueil input#search-input {
+    width: 95%;
+    background:none;
+    border: none;
+    color: black;
+}
+
+input#search-input::placeholder {
+    color: black;
+}
+
+/*header blanc*/
+.search-bar{
+    width: 60%;
+    /*color: white;*/
+    margin: 0 auto auto;
+}
+
+input#search-input {
+    width: 95%;
+    /*background: none;*/
+    /*border: white 1px solid;*/
+   /* color: white;*/
+    margin-right: 5px;
+}
+
+
+
+.logo {
+    width: 4%;
+    margin-left: 10px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+
+
+
+/*FIL ARIANNE*/
+
+
+#contest .content-flex{
+    background: black;
+}
+
+.content-flex {
+    background: white;
+    display: flex;
+}
+.content-items{
+    flex-basis: 97%;
+
+}
+.fil-arianne{
+    flex-basis: 3%;
+    align-items: center;
+}
+
+
+p.fil{
+    width: fit-content;
+    text-align: center;
+    flex-basis: 5%;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    background: #78A9CE;
+    border: 1px solid white;
+    font-size: 1rem;
+    padding: 1rem;
+    top:40vh;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    color: white;
+    margin: auto 2px 0 auto;
+
+}
+#accueil p.fil{
+    border: 1px solid black;
+}
+.fil-arianne>span{
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    content: '';
+    background: white;
+    height: 100% ;
+    width: 1px;
+    margin-left: 50%;
+}
+#accueil .fil-arianne>span{
+    background: black;
+}
+
+
+
+
+
+
+
+
+/*ACCUEIL*/
+
+/* background accueil */
+
+#accueil > .background{
+    background: url("background/background-accueil.jpg") 50% 50% no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    z-index: 10;
+}
+
+
+.accueil-flex-container{
+    display: flex;
+    margin-top: 10%;
+}
+.accueil-flex-item{
+    flex-basis: 60%;
+    padding: 0;
+    margin-top: 8%;
+}
+
+.accueil-flex-item h1{
+    margin: 0 0 0 5rem;
+    padding: 0;
+}
+
+
+#accueil .spot-items,
+#profil .spot-items {
+    width: 80%;
+    text-align: center;
+    background-color: rgba(206, 206, 206, 0.4);
+    padding: 3rem 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10rem;
+}
+#accueil .spot-img,
+#profil .spot-img{
+    flex-basis: 80%;
+    margin: auto 1rem 3rem;
+}
+
+#accueil .content-flex> .content-items> .spot-items> #flex-spot> .spot-img img,
+#profil > .content-items > .spot-items > #flex-spot > .spot-img img{
+    /*max-width: 100%;  */
+    width: 500px;
+
+}
+
+#accueil .spot-items h3,
+#profil .spot-items h3{
+    text-align: center;
+    color: #78A9CE;
+    padding: 0 0 30px;
+    margin: 0;
+    border-bottom: 1px solid black;
+}
+
+
+#accueil #flex-spot,
+#profil #flex-spot{
+    display: flex;
+}
+
+#accueil .bio-spot,
+#profil .bio-spot{
+    flex-basis: 20%;
+}
+
+#accueil .bio-spot p ,
+#profil .bio-spot p {
+    font-size: 1.6rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+#accueil .tag-spot ,
+#profil .tag-spot{
+    flex-basis: 20%;
+}
+
+#accueil .description-spot p,
+#profil .description-spot p{
+    font-size: 1.6rem;
+    margin-top: 2rem;
+}
+
+#accueil .share-comment,
+#profil .share-comment{
+    margin-top: 5rem;
+}
+
+#accueil .share-comment i,
+#profil .share-comment i{
+    padding: 1rem;
+}
+
+
+
+/*formulaire accueil*/
+form {
+    background-color: rgba(206, 206, 206, 0.8);
+    flex-basis: 30%;
+    padding: 2em;
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+/*CONTEST*/
+body#contest {
+    color: white;
+}
+#contest .background{
+    background: url("background/background-contest.png") 50% 50% no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    z-index: 10;
+}
+#contest h1{
+    width: 80%;
+    text-align: center;
+    background: rgba(0,0,0,0.5);
+    margin: 15% auto auto;
+    padding: 1rem;
+}
+#contest .event-items{
+    display: flex;
+    padding-top: 30px;
+    padding-right: 5%;
+    padding-left: 5%;
+    margin-bottom: 10rem;
+}
+#contest .event-img{
+    flex-basis: 50%;
+}
+
+#contest .event-img img{
+    max-width: 100%;
+    padding-left: 10rem;
+    padding-right: 10rem;
+
+}
+#contest .description-event{
+    flex-basis: 50%;
+}
+#contest p.lieu-event{
+    font-size: 2rem;
+    text-align: center;
+    border-top: 1px solid white;
+    padding-top: 2rem;
+    margin-bottom: 4rem;
+}
+.description-event h3{
+    text-align: center;
+    color: #78A9CE;
+    margin: 0 0 30px;
+}
+
+
+
+                                                    /*PAGE INSCRIPTION + CREATION*/
+#inscription {
+    background: url("background/inscription-back.jpg") no-repeat 50% 50%;
+    width: 100%;
+    background-size: cover;
+    margin: 0;
+    padding: 0 0 3rem;
+}
+#inscription h1 {
+
+    background-color: hsla(0, 0%, 71%, .40);
+    padding: 0.5% 2%;
+}
+
+#inscription form a{
+    color: black;
+}
+#inscription p.alerte {
+    font-weight: bold;
+
+}
+
+
+
+/*formulaire*/
+
+.input-formulaire {
+    margin: auto;
+}
+
+form h3 {
+    text-align: center;
+    margin: 0;
+}
+
+#inscription form {
+    background-color: white;
+    width: 50%;
+    padding: 1em 3rem;
+
+}
+
+#inscription form p {
+    text-align: center;
+}
+
+
+/*formulaire create*/
+
+#create-spot form{
+    width: 60%;
+    margin-bottom: 3rem;
+
+
+}
+
+/*formulaire inscription et création spot*/
+.input-formulaire-inscription, #password,  #email, .custom-file, .custom-file-input, .input-formulaire-spot{
+    width: 100%;
+    padding: 1%;
+    margin: 3% auto;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    text-align: left;
+
+}
+#submit-inscris{
+    text-align: center;
+    background: #78A9CE;
+    color: white;
+    padding: 1rem;
+    width: 80%;
+    margin: 2rem 10%;
+}
+
+
+
+#password {
+    margin-bottom: 9%;
+}
+
+.pure-checkbox {
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+button.connexion {
+    background: none;
+    color: black;
+    margin: 0;
+
+}
+
+#skate-form{
+    width:25px;
+}
+button {
+    margin-top: 30px;
+    width: 100%;
+    padding-bottom: 4%;
+    padding-top: 4%;
+    color: white;
+    background: #78A9CE;
+    border: none;
+}
+
+
+#inscription > form > fieldset > div > label > a {
+    color: black;
+}
+
+.inscription-p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+form > h4 {
+    text-align: center;
+    margin-top: 0;
+}
+
+body > #inscription > header > .menu > ul > li > a:hover {
+    color: #78A9CE;
+
+}
+
+body > #inscription > header > .menu > ul > li > a {
+    color: white;
+}
+
+
+
+                                                /*PAGE PROFIL*/
+#profil{
+    /*background: #78A9CE;*/
+}
+
+#profil .content-profil {
+    display: flex;
+    padding: 5rem;
+}
+#profil .mon-profil{
+    flex-basis: 30%;
+}
+#profil .info-flex{
+    flex-basis: 70%;
+}
+#profil h1{
+
+    padding-left: 0;
+    color: #78A9CE;
+    font-size: 3.8rem;
+    font-weight: bolder;
+}
+#profil .content-profil .info-flex .flex-info-button .info h4{
+    font-weight: lighter;
+    font-size: 1.8rem;
+    border: none;
+}
+
+#profil .content-profil .info-flex  h4{
+    border-bottom: 2px solid #78A9CE;
+    margin-bottom: 3rem;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+#profil .content-profil .mon-profil {
+    /*border-radius: 50%;*/
+    text-align: center;
+}
+
+#profil .content-profil .mon-profil img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px solid rgba(21,21,21,0.5);
+
+}
+#profil .flex-info-button{
+    display: flex;
+}
+#profil .info{
+    flex-basis: 50%;
+}
+
+#profil .button-flex{
+    flex-basis: 50%;
+}
+#profil button {
+    flex-basis: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    /*width: 30%;*/
+    text-align: center;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    border: 1px solid #78A9CE;
+
+}
+
+#profil button:hover{
+    color: #78A9CE;
+    background: white;
+}
+
+#profil button i {
+    margin-right: 1rem;
+}
+                                                    /*PAGE CONSTRUCTION*/
+#construction h1 {
+    width: 80%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    margin: 15% auto auto;
+    padding: 2rem 1rem;
+    color: white;
+}
+#construction #skate-deco{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#construction .background{
+    background: url("background/background-construct.png") 50% 50% no-repeat;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+#construction header .search-bar i {
+    color: white;
+}
+#construction .content-flex{
+    background: #78A9CE;
+}
+#construction .content-flex .fil-arianne p.fil{
+    color:#78A9CE ;
+    background: white;
+}
+#construction h3{
+    color: black;
+    padding: 3rem 2rem;
+    background: white;
+    width: fit-content ;
+    text-align: center;
+    margin: auto auto 5rem;
+}
+#construction .box-don{
+    color: white;
+    text-align: center;
+    width: 50%;
+    padding: 4rem 1rem;
+    margin: 15rem auto auto;
+
+}
+
+
+#construction .content-flex .content-items .box-don p {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 1.6rem;
+    text-align: justify;
+}
+#construction .flex-box-don {
+    display: flex;
+}
+
+
+
+                                                        /*FOOTER*/
+footer {
+    color: white;
+    background: black;
+    padding-top: 7px;
+    padding-right: 4%;
+    padding-left: 4%;
+}
+
+footer h4 {
+    font-size: 2.5rem;
+    margin: 2%;
+    color: white;
+    text-align: center;
+}
+
+
+
+/*reseaux*/
+footer ul li {
+    list-style-type: none;
+    align-items: center;
+    margin: auto;
+    max-width: 100%;
+
+
+}
+
+
+footer > #social-networks > ul {
+    display: flex;
+    padding-left: 0;
+    width: 80%;
+    margin: auto;
+
+
+}
+
+footer > #social-networks a {
+    text-decoration: none;
+    font-size: 2.1rem;
+    color: white;
+}
+
+footer > #social-networks > ul > li {
+}
+
+footer span {
+    font-size: 1.4rem;
+    margin-left: 6px;
+
+}
+
+footer i {
+    color: #78A9CE;
+}
+
+footer #social-networks {
+    margin-bottom: 5%;
+}
+
+footer p {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+    margin-left: 0;
+    margin-top: 0;
+}
+
+footer > .footer-grid > .links > ul > li > a,
+footer > .footer-grid > .links > ul li {
+    font-size: 1.4rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 28% 28% 28% 16%;
+    grid-template-rows: 60px 60px;
+}
+
+footer .realiser {
+    grid-row: 1/2;
+    grid-column: 4/5;
+}
+
+footer > .footer-grid {
+    color: white;
+    font-size: 1.6rem;
+}
+
+footer > .footer-grid > div a {
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*mobile */
+@media only screen and (max-width: 520px) {
+    body {
+        font-size: 1.6rem;
+    }
+    h1{
+        font-size: 2.5rem;
+        text-align: center;
+
+    }
+
+    h2{
+        font-size: 2.0rem;
+        text-align: center;
+        margin: 1rem;
+    }
+
+    h3{
+        font-size: 2.0rem;
+        margin: 10% auto auto 5%;
+    }
+
+
+    .logo{
+        width: 10%;
+    }
+
+    /*header*/
+    #accueil input#search-input,
+    input#search-input {
+        width: 80%;
+    }
+
+    #accueil .search-bar,
+    .search-bar{
+        width: 50%;
+    }
+    #construction header .search-bar i{
+        color: black;
+    }
+
+    .nav-toggle {
+        width: 50px;
+    }
+
+    /*MENU*/
+
+
+    .menu .nav-container{
+        width: 100%;
+    }
+
+    .menu ul > li a, .menu ul > li a:visited {
+        font-size: 4.0rem;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+    }
+
+    .menu #nav-reseaux li a i{
+        font-size: 20px;
+    }
+    .menu #nav-reseaux span{
+        height: 150px;
+    }
+
+
+    .fil-arianne{
+        display: none;
+    }
+    #accueil.content-items{
+        width: 100%;
+        flex-basis: 100%;
+        margin: 0;
+    }
+
+                                                    /*ACCUEIL*/
+    #accueil > .background {
+        background: url("background/background-accueil.jpg") 56% 44% no-repeat;
+        background-size: cover;
+    }
+
+    #accueil .accueil-flex-container{
+        display: block;
+    }
+    .accueil-flex-item h1{
+        margin:  2rem 1rem;
+    }
+    #accueil #sb-accueil-2{
+        display: none;
+    }
+    #accueil #sb-accueil{
+        display: block;
+    }
+    #accueil form{
+        width: 90%;
+        margin-top: 10rem;
+    }
+    #accueil #flex-spot,
+    #profil #flex-spot {
+        display: block;
+    }
+
+    #accueil .bio-spot,
+    #profil .bio-spot{
+        margin-bottom: 1rem;
+    }
+
+    #accueil .content-flex > .content-items > .spot-items > #flex-spot > .spot-img img,
+    #profil > .content-items > .spot-items > #flex-spot > .spot-img img {
+        max-width: 100%;
+    }
+
+    #accueil .spot-items,
+    #profil .spot-items {
+        width: 90%;
+    }
+
+
+                                                        /*CONTEST*/
+    #contest .background {
+        background: url("background/background-contest.png") 83% 17% no-repeat;
+        background-size: cover;
+    }
+    #contest .content-flex{
+        display: block;
+    }
+    #contest .event-items{
+        display: block;
+        margin-bottom: 0;
+        padding-bottom: 10rem;
+    }
+
+    #contest .event-img img{
+        margin-bottom: 5rem;
+    }
+
+
+
+
+    /*CONSTRUCTION*/
+
+
+
+    #construction .flex-box-don{
+        display: block;
+    }
+    #construction .box-don{
+        width: 100%;
+        margin-top: 8rem;
+    }
+    #construction h1, #contest h1{
+        margin-top: 20rem;
+    }
+
+    /*INSCRIPTION*/
+    #inscription form{
+        width: 95%;
+        padding: 1rem 2rem;
+    }
+
+    #profil .content-profil{
+        display: block;
+    }
+
+    #profil .content-profil .mon-profil img{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+    #profil .flex-info-button{
+        display: block;
+    }
+    #profil button{
+        padding-top: 3%;
+        padding-bottom: 3%;
+    }
+
+    #profil h1{
+        font-size: 3.0rem;
+    }
+
+
+
+    /*footer*/
+    footer {
+        /*margin-top: 10%;*/
+        color: white;
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .inscrire footer {
+        margin-top: 0;
+    }
+
+    footer h4 {
+        padding-top: 10px;
+    }
+
+
+    footer #social-networks {
+        margin-top: 5%;
+        margin-bottom: 10%;
+    }
+
+    footer #social-networks ul {
+        width: 95%;
+        margin: auto;
+    }
+
+
+    footer > #social-networks > ul > li > a {
+        font-size: 1.7rem;
+    }
+
+    /*grid */
+    footer .footer-grid {
+        font-size: 1.4rem;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 60px 60px 60px 60px;
+    }
+
+    footer .realiser {
+        grid-row: 4/5;
+        grid-column: 1/3;
+    }
+}
+
+
+/*PAGES CGU MENTIONS ...*/
+/*CGU*/
+#cgu-content ul {
+    margin-left: 5%;
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1000px) {
+    h1{
+        font-size: 4.5rem;
+    }
+    .accueil-flex-item h1{
+        margin: 2rem 0 0 5rem;
+    }
+    #accueil form{
+        width: 80%;
+        margin-top: 10rem;
+        padding: 3rem;
+    }
+    .accueil-flex-container{
+        display: block;
+    }
+    #accueil #sb-accueil-2{
+        display: none;
+    }
+    #accueil #sb-accueil{
+        display: block;
+        width: 72%;
+    }
+
+    #accueil #flex-spot,
+    #profil #flex-spot {
+        display: block;
+    }
+
+    #accueil .bio-spot,
+    #profil .bio-spot {
+        margin-bottom: 1rem;
+    }
+
+    #accueil .content-flex > .content-items > .spot-items > #flex-spot > .spot-img img,
+    #profil > .content-items > .spot-items > #flex-spot > .spot-img img {
+        max-width: 100%;
+    }
+
+    #accueil .spot-items,
+    #profil .spot-items {
+        width: 90%;
+    }
+
+    .menu .nav-container{
+        width: auto;
+    }
+    /*contest*/
+    #contest .event-items {
+        display: block;
+        margin-bottom: 0;
+        padding-bottom: 10rem;
+    }
+
+    #contest .event-img img {
+        margin-bottom: 5rem;
+    }
+
+    /*INSCRIPTION*/
+    #inscription form {
+        width: 95%;
+        padding: 1rem 2rem;
+    }
+
+    /*footer*/
+    footer .footer-grid div {
+        font-size: 1.4rem;
+    }
+
+    #profil .content-profil {
+        display: block;
+    }
+
+    #profil .content-profil .mon-profil img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+
+    #profil .flex-info-button {
+        display: block;
+    }
+
+    #profil button {
+        padding-top: 3%;
+        padding-bottom: 3%;
+    }
+
+    #profil h1 {
+        font-size: 3.0rem;
+    }
+}
+
+
+
+
+
+
+
+@media only screen and (min-width: 1000px) and (max-width: 1024px){
+    h1 {
+        font-size: 4.5rem;
+    }
+
+    .accueil-flex-item h1 {
+        margin: 2rem 0 0 5rem;
+    }
+
+    #accueil form {
+        padding: 3rem;
+    }
+
+    /*footer*/
+    footer .footer-grid div {
+        font-size: 1.4rem;
+    }
+
+    .menu .nav-container {
+        width: auto;
+    }
+
+    #inscription form {
+        width: 80%
+    }
+
+    .accueil-flex-container {
+        display: block;
+    }
+
+    #accueil #sb-accueil-2 {
+        display: none;
+    }
+
+    #accueil #sb-accueil {
+        display: block;
+        width: 75%;
+    }
+
+    #accueil form {
+        width: 60%;
+        margin-top: 5rem;
+        padding: 3rem;
+    }
+}
+
+
+
+
+
+
+
+
+/*@media only screen and (min-width: 1536px) and (max-width: 2048px) {
+    .menu .nav-container {
+        width: auto;
+    }
+    #inscription form{width: 80%}
+
+}*/
